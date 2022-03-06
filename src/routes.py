@@ -1,12 +1,11 @@
-import re
-from typing import *
 from helpers import *
 
 
-def get_new_line(match: re.Match, line: str, folder_dict: Dict, mode: str):
+def handle_rewrite(match: re.Match, line: str, folder_dict: Dict, mode: str):
     """
+    Rewrite a line according to various modes
     :param line: one line in file
-    :param mode: "embed, md, md_hash"
+    :param mode: "embed", "md", "md_partial"
     :return: modified line
     """
     curr_interval = match.span(1)  # (start, end)
@@ -78,6 +77,7 @@ def handle_md_partial(filename, line, relative_dir, curr_interval) -> str:
     md_relative_path = '[' + filename + '](' + relative_dir + ')'
     new_line = line[0:start] + md_relative_path + line[end:]
     return new_line
+
 
 if __name__ == '__main__':
     print("===This is the routes, and you shouldn't really be running this!===")

@@ -5,7 +5,7 @@ from helpers import *
 def parse_folder_to_dicts(dir_name: SOURCE_DIR) -> Tuple[dict, List]:
     """
     :param dir_name: folder absolute dir
-    :return: 2 Dicts:  { file_name: linux path}, {markdown_file_name: os path}
+    :return: 2 Dicts:  { file_name: linux path}, [os path for markdown files]
     """
     out_dict = {}
     md_list = []
@@ -37,7 +37,6 @@ def get_file_info(file, md_list, out_dict, path, root_path):
             out_dict[filename] = relative_path
             md_list.append(relative_path)
 
-
     elif (file_extension in IMAGE_EXTENSIONS):  # is image
         if (file) in out_dict:
             # file with same name exists
@@ -48,7 +47,7 @@ def get_file_info(file, md_list, out_dict, path, root_path):
 
 def try_read_and_parse():
     folder_dict, md_list = parse_folder_to_dicts(SOURCE_DIR)
-    lines = open_file(SAMPLE_FILE)
+    lines = get_file_lines(SAMPLE_FILE)
     new_file = convert_lines(lines, folder_dict)
 
     save_file(new_file, "ttt.md")
@@ -58,12 +57,14 @@ def try_read_and_parse():
 
 def try_read_and_parse_multi():
     copy_overwrite_source()
+
+    # { file_name: linux path}, [os path for markdown files]
     folder_dict, md_list = parse_folder_to_dicts(SOURCE_DIR)
 
     for path in md_list:
-        curr_lines = open_file(path)
-        new_file = convert_lines(curr_lines, folder_dict)
-        save_file(new_file, path)
+        curr_lines = get_file_lines(path)
+        new_lines = convert_lines(curr_lines, folder_dict)
+        save_file(new_lines, path)
 
     print("Done")
 

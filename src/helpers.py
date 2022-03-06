@@ -1,10 +1,13 @@
-import os, re
-from model import *
-from typing import *
-from controller import *
+import os
+import re
 import shutil
+from typing import *
 
-def is_code_start(line:str) -> bool:
+from controller import *
+from model import *
+
+
+def is_code_start(line: str) -> bool:
     """
     check if the line is a md codeblock start
     :param line: eg. "```pythonic\n"
@@ -13,7 +16,8 @@ def is_code_start(line:str) -> bool:
     match = re.search(start_rule, line)
     return bool(match)
 
-def is_code_end(line:str) -> bool:
+
+def is_code_end(line: str) -> bool:
     """
     check if the line is a md codeblock end
     :param line: eg. "```"
@@ -23,10 +27,10 @@ def is_code_end(line:str) -> bool:
     return bool(match)
 
 
-
-def get_extension(path:str)->Tuple:
+def get_extension(path: str) -> Tuple:
     """return filename, file_extension"""
     return os.path.splitext(path)
+
 
 def get_root_path(dir_name):
     # lazy way to get root
@@ -35,20 +39,20 @@ def get_root_path(dir_name):
         return root_path
 
 
-def get_relative_path(full_path:str, root_path:str):
+def get_relative_path(full_path: str, root_path: str):
     """
     :param full_dir: "D:\CSC2\obsidian_abs\working_lib\_index.md"
     :param root_dir: "D:\CSC2\obsidian_abs\working_lib"
     :return: _index.md
     """
     if root_path in full_path:
-        subtracted = full_path.replace(root_path+'\\', '')
-        return subtracted.replace(os.sep, '/') # change to linux slash
+        subtracted = full_path.replace(root_path + '\\', '')
+        return subtracted.replace(os.sep, '/')  # change to linux slash
     else:
         print("ERROR: inconsistent dir")
 
 
-def open_file(path:str):
+def get_file_lines(path: str):
     """
     read in a md file
     :param path: relative path (of INPUT_DIR) to be saved
@@ -71,7 +75,7 @@ def copy_overwrite_source():
     shutil.copytree(SOURCE_DIR, OUTPUT_DIR, dirs_exist_ok=True)
 
 
-def save_file(str_list:List[str], path:str):
+def save_file(str_list: List[str], path: str):
     """
     :param file: list of lines
     :param path: relative path (of OUTPUT_DIR) to be saved
