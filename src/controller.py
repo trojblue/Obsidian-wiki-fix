@@ -1,6 +1,6 @@
 from model import *
 from routes import *
-from helpers import get_extension
+from helpers import *
 
 
 # todo: add other extensions
