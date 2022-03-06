@@ -13,7 +13,7 @@ Decently documented so it's easier to modify by your needs.
 **convert only:**
 
 ```bash
-git clone https://github.com/trojblue/Obsidian-wiki-fix && cd Obsidian-wiki-fix/src	
+git clone https://github.com/trojblue/Obsidian-wiki-fix && cd Obsidian-wiki-fix/src
 ```
 
 1. edit `/src/model.py`:
@@ -26,11 +26,7 @@ git clone https://github.com/trojblue/Obsidian-wiki-fix && cd Obsidian-wiki-fix/
 1. finish step 1 as above
 2. edit & run `update.bat` according to your local path
 
-
-
 You can also automate things like generating YAML before publishing, or add backlink/tags to similar articles. Python would come in handy when doing NLP stuff.
-
-
 
 ## Sample Results
 
@@ -48,14 +44,12 @@ suffixes such as `PNG` and `png` are treated as different files to better suppor
     [nested_child](English_folder/nested_child.md)
 ```
 
-
-
 ## Known Issues
 
 these types of links are not working for now:
 
 ```
-[[something#chapter]]            
+[[something#chapter]]
 [[something|displayedTitle]]
 [[something#chapter|displayedTitle]]
 ```
