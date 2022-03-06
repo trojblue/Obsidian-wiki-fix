@@ -78,3 +78,6 @@ def handle_md_partial(filename, line, relative_dir, curr_interval) -> str:
     md_relative_path = '[' + filename + '](' + relative_dir + ')'
     new_line = line[0:start] + md_relative_path + line[end:]
     return new_line
+
+if __name__ == '__main__':
+    print("===This is the routes, and you shouldn't really be running this!===")

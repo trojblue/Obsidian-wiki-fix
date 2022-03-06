@@ -1,7 +1,7 @@
 # SAMPLE_FILE = "D:\CSC2\obsidian_abs\working_lib/_index.md"
 SAMPLE_FILE = "D:\CSC2\obsidian_abs\working_lib/test.md"
-SOURCE_DIR = "D:\CSC2\obsidian_abs\working_lib"
-OUTPUT_DIR = "D:\CSC2\obsidian_abs\out"
+SOURCE_DIR = "D:\quartz\content-edit"
+OUTPUT_DIR = "D:\quartz\content"
 
 CONVERT_EXTENSIONS = [".md", ".markdown"]
 

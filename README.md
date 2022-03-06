@@ -15,7 +15,7 @@ suffixes such as `PNG` and `png` are treated as different files to better suppor
 1. clone repo
 2. change `SOURCE_DIR` to your obsidian vault folder
 3. change `OUTPUT_DIR` to folders of your choice
-4. run `src/controller.py`
+4. run `src/view.py`
 
 The converted obsidian vault will be copied to your specified `OUTPUT_DIR`.
 

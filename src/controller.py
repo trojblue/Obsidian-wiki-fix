@@ -72,6 +72,4 @@ def convert_lines(lines:List, folder_dict:Dict) -> List:
 
 
 if __name__ == '__main__':
-    # a = replace_if_has_double_quote("这是一段[[asd中文as日本語#asd]]")
-    # b = is_code_start("```  asdas dasd```")
-    print("D")
+    print("===This is the controller, and you shouldn't really be running this!===")
