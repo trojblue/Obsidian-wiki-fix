@@ -7,3 +7,4 @@ markdown embed:
 
 multiple wiki links in same line:
 [[中文文件夹中文名字]], [[EN_filename_under_CN_folder]]
+
