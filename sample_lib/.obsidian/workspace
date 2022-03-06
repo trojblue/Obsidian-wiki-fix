@@ -1,0 +1,99 @@
+{
+  "main": {
+    "id": "e84ad47d2700bd4d",
+    "type": "split",
+    "children": [
+      {
+        "id": "c33c117e639c1032",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "_index.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d71a4a5e2319e842",
+    "type": "split",
+    "children": [
+      {
+        "id": "e5fc5481746cc143",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a95d9e7ba19c0a54",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d83f19dfbd4fe903",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "77bb1a47ad179166",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc674ca559c1d35a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c1080fef118bf587",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "c33c117e639c1032",
+  "lastOpenFiles": [
+    "_index.md",
+    "English_folder/nested_parent.md",
+    "中文文件夹/中文文件夹中文名字.md",
+    "中文文件夹/EN_filename_under_CN_folder.md",
+    "English_folder/nested_child.md",
+    "English_folder/EN_filename_under_EN_folder.md"
+  ]
+}
