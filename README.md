@@ -1,6 +1,6 @@
 # Obsidian-wiki-fix
 
-The project is intended to convert Obsidian wiki-link to Quartz-supported markdown relative links, plus the benefit of easily customizing output scheme to fit any other software/service.
+The project is intended to convert Obsidian wiki-link to [Quartz](https://github.com/jackyzha0/quartz)-supported markdown relative links, plus the benefit of easily customizing output scheme to fit any other software/service.
 
 **Requires python version > 3.8** because I used `:=` and some other python38 features.
 
@@ -10,12 +10,23 @@ suffixes such as `PNG` and `png` are treated as different files to better suppor
 
 ## Usage
 
-1. clone repo
-2. change `SOURCE_DIR` to your obsidian vault folder
-3. change `OUTPUT_DIR` to folders of your choice
-4. run `src/app.py`
+**convert only:**
 
-The converted obsidian vault will be copied to your specified `OUTPUT_DIR`.
+```bash
+git clone https://github.com/trojblue/Obsidian-wiki-fix && cd Obsidian-wiki-fix/src	
+```
+
+1. edit `/src/model.py`:
+   1. change `SOURCE_DIR` to your obsidian vault folder
+   2. change `OUTPUT_DIR` to folder of your choice
+2. run `src/app.py`, the converted obsidian vault will be copied to your specified `OUTPUT_DIR`.
+
+**convert and push:**
+
+1. finish step 1 as above
+2. edit & run `update.bat` according to your local path
+
+
 
 You can also automate things like generating YAML before publishing, or add backlink/tags to similar articles. Python would come in handy when doing NLP stuff.
 
@@ -43,7 +54,7 @@ Original:
 these types of links are not working for now:
 
 ```
-[[something#chapter]]
+[[something#chapter]]            
 [[something|displayedTitle]]
 [[something#chapter|displayedTitle]]
 ```
