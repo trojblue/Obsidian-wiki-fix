@@ -58,7 +58,6 @@ def get_file_lines(path: str):
     :param path: relative path (of INPUT_DIR) to be saved
     :return: List of lines
     """
-
     full_read_path = os.path.join(SOURCE_DIR, path)
     a_file = open(full_read_path, "r")
     lines = a_file.readlines()

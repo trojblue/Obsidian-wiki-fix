@@ -17,7 +17,7 @@ IMAGE_EXTENSIONS = [".jpeg", ".jpg", ".png", ".gif", ".bmp", ".svg",
 # useless
 re_md_start_old = "```[^\S\r\n]*[a-zA-Z0-9_\-\(\)]*[\r\n]$"
 
-# starts with ```, any other characters, no end ```
+# starts with ```, any other characters, should not end with ```
 re_md_start = "^```[\w\-\(\)^\S]*[^`]*$"
 
 # ``` with text after it is still considered to be in block

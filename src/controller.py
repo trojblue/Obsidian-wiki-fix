@@ -1,5 +1,5 @@
 from routes import *
-from typing import Dict
+from typing import Dict, re
 
 # todo: add other extensions
 
