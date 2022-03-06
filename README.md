@@ -34,20 +34,18 @@ You can also automate things like generating YAML before publishing, or add back
 
 ## Sample Results
 
+see `sample_lib` folder for the actual hierarchy
 ```
-Original:
 ![[Pasted image 20220305175334.PNG]]
-
-    Converts to:
+    →
     ![Pasted image 20220305175334.PNG](==assets==/Pasted image 20220305175334.PNG)
 
-
-Original:
 [[nested_child]]
-
-    Converts to:
+    →
     [nested_child](English_folder/nested_child.md)
 ```
+
+
 
 ## Known Issues
 
