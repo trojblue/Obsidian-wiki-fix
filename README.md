@@ -1,14 +1,14 @@
 # Obsidian-wiki-fix
 
-The project is intended to convert Obsidian wiki-link to [Quartz](https://github.com/jackyzha0/quartz)-supported markdown relative links, plus the benefit of easily customizing output scheme to fit any other software/service.
+Converts Obsidian wiki-link to markdown relative links for [Quartz](https://github.com/jackyzha0/quartz), plus the benefit of easily customizing output scheme to fit any other software/service.
 
 **Requires python version > 3.8** because I used `:=` and some other python38 features.
 
 Decently documented so it's easier to modify by your needs.
 
-suffixes such as `PNG` and `png` are treated as different files to better support github pages functionality.
-
 ## Usage
+
+**The script is intended for "shortest possible" (`[[something]]`)style of wiki-link in obsidian settings.**
 
 **convert only:**
 
@@ -34,7 +34,10 @@ You can also automate things like generating YAML before publishing, or add back
 
 ## Sample Results
 
-see `sample_lib` folder for the actual hierarchy
+see `sample_lib` folder for the actual hierarchy.
+
+suffixes such as `PNG` and `png` are treated as different files to better support github pages functionality.
+
 ```
 ![[Pasted image 20220305175334.PNG]]
     →
@@ -57,7 +60,7 @@ these types of links are not working for now:
 [[something#chapter|displayedTitle]]
 ```
 
-also audio / pdf and stuff are not supported. only text and image, but they're easy to implement. Just the fact that I don't use them very often.
+also audio / pdf and stuff are not supported. only text and image, but others are easy to implement. Just the fact that I don't use them very often.
 
 ## Disclaimer
 
