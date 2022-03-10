@@ -1,10 +1,11 @@
+import glob
 import os
 import re
 import shutil
 from typing import *
 
-from controller import *
-from model import *
+from lib.controller import *
+from lib.model import *
 
 
 def is_code_start(line: str) -> bool:
@@ -52,7 +53,7 @@ def get_relative_path(full_path: str, root_path: str):
         print("ERROR: inconsistent dir")
 
 
-def get_file_lines(path: str):
+def read_file(path: str) -> List[str]:
     """
     read in a md file
     :param path: relative path (of INPUT_DIR) to be saved
@@ -71,6 +72,10 @@ def copy_overwrite_source():
     needs Python 3.8 new feature
     :return: None
     """
+    files = glob.glob(OUTPUT_DIR)
+    for f in files:
+        os.remove(f)
+
     shutil.copytree(SOURCE_DIR, OUTPUT_DIR, dirs_exist_ok=True)
 
 
@@ -85,3 +90,12 @@ def save_file(str_list: List[str], path: str):
     for element in str_list:
         f.write(element + "\n")
     f.close()
+
+
+def change_json_slash():
+    json_lines = read_file(INDEX_JSON_PATH)
+    for i in range (len(json_lines)):
+        curr_line = json_lines[i]
+        json_lines[i] = curr_line.replace("\\\\", "/")
+
+        print("D")

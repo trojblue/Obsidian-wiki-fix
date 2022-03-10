@@ -1,10 +1,9 @@
-# SAMPLE_FILE = "D:\CSC2\obsidian_abs\working_lib/_index.md"
-SAMPLE_FILE = "D:\CSC2\obsidian_abs\working_lib/test.md"
-# SOURCE_DIR = "D:\quartz\content-edit"
-# OUTPUT_DIR = "D:\quartz\content"
+SOURCE_DIR = "D:\quartz\content-edit"
+OUTPUT_DIR = "D:\quartz\content"
+INDEX_JSON_PATH = "D:\quartz\\assets\indices\contentIndex.json"
 
-SOURCE_DIR = "D:\CSC2\Obsidian-wiki-fix\\test_lib"
-OUTPUT_DIR = "D:\CSC2\Obsidian-wiki-fix\\test_out"
+# SOURCE_DIR = "D:\CSC2\Obsidian-wiki-fix\\test_lib"
+# OUTPUT_DIR = "D:\CSC2\Obsidian-wiki-fix\\test_out"
 
 CONVERT_EXTENSIONS = [".md", ".markdown"]
 

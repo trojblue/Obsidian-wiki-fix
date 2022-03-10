@@ -1,5 +1,5 @@
-from controller import *
-from helpers import *
+from lib.controller import *
+from lib.helpers import *
 
 
 def parse_folder_to_dicts(dir_name: SOURCE_DIR) -> Tuple[dict, List]:
@@ -45,29 +45,24 @@ def get_file_info(file, md_list, out_dict, path, root_path):
             out_dict[file] = get_relative_path(full_path, root_path)
 
 
-def try_read_and_parse():
-    folder_dict, md_list = parse_folder_to_dicts(SOURCE_DIR)
-    lines = get_file_lines(SAMPLE_FILE)
-    new_file = convert_lines(lines, folder_dict)
 
-    save_file(new_file, "ttt.md")
-
-    print("Done")
-
-
-def try_read_and_parse_multi():
-    copy_overwrite_source()
-
+def handle_wiki():
+    """Main Program for rewriting wiki links
+    """
     # { file_name: linux path}, [os path for markdown files]
     folder_dict, md_list = parse_folder_to_dicts(SOURCE_DIR)
 
     for path in md_list:
-        curr_lines = get_file_lines(path)
+        curr_lines = read_file(path)
         new_lines = convert_lines(curr_lines, folder_dict)
         save_file(new_lines, path)
 
     print("Done")
 
+def run():
+    copy_overwrite_source()
+    handle_wiki()
+    change_json_slash()
 
 if __name__ == '__main__':
-    try_read_and_parse_multi()
+    run()

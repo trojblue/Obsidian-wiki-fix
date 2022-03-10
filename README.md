@@ -10,6 +10,13 @@ Decently documented so it's easier to modify by your needs.
 
 **The script is intended for "shortest possible" (`[[something]]`)style of wiki-link in obsidian settings.**
 
+Because of how hugo works, duplicated / unwanted files in `content` will cause double-indexing problems on the website. 
+
+therefore, **EVERYTHING IN OUTPUT_DIR WILL BE DELETED, THEN OVERWRITTEN BY THE NEW FILES** when the program operates.
+
+**USE AT YOUR OWN RISK!**
+
+
 **convert only:**
 
 ```bash
@@ -21,6 +28,7 @@ git clone https://github.com/trojblue/Obsidian-wiki-fix && cd Obsidian-wiki-fix/
    2. change `OUTPUT_DIR` to folder of your choice
 2. run `src/app.py`, the converted obsidian vault will be copied to your specified `OUTPUT_DIR`.
 
+<br>
 **convert and push:**
 
 1. finish step 1 as above

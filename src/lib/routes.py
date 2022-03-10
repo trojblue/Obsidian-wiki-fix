@@ -1,4 +1,4 @@
-from helpers import *
+from lib.helpers import *
 
 
 def handle_rewrite(match: re.Match, line: str, folder_dict: Dict, mode: str):
