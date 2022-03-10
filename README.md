@@ -54,6 +54,8 @@ suffixes such as `PNG` and `png` are treated as different files to better suppor
 
 ## Known Issues
 
+**filename with space is not supported for now, to be fixed**
+
 these types of links are not working for now:
 
 ```
