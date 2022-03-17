@@ -50,19 +50,22 @@ def handle_wiki():
     """Main Program for rewriting wiki links
     """
     # { file_name: linux path}, [os path for markdown files]
+    print("rewriting wiki-links...")
     folder_dict, md_list = parse_folder_to_dicts(SOURCE_DIR)
+    wiki_foler_count = 0
 
     for path in md_list:
         curr_lines = read_file(path)
-        new_lines = convert_lines(curr_lines, folder_dict)
+        new_lines, wiki_file_count = convert_lines(curr_lines, folder_dict)
         save_file(new_lines, path)
+        wiki_foler_count += wiki_file_count
 
-    print("Done")
+    print("replaced %s links in %s files"%(wiki_foler_count, len(folder_dict.keys())) )
 
 def run():
     copy_overwrite_source()
     handle_wiki()
-    change_json_slash()
+    # change_json_slash()
 
 if __name__ == '__main__':
     run()

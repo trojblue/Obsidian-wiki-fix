@@ -4,6 +4,8 @@ import re
 import shutil
 from typing import *
 
+from pip import main
+
 from lib.controller import *
 from lib.model import *
 
@@ -72,9 +74,10 @@ def copy_overwrite_source():
     needs Python 3.8 new feature
     :return: None
     """
-    files = glob.glob(OUTPUT_DIR)
-    for f in files:
-        os.remove(f)
+    print("overwriting target folder...")
+    # files = glob.glob(OUTPUT_DIR)
+    # for f in files:
+    #     os.remove(f)
 
     shutil.copytree(SOURCE_DIR, OUTPUT_DIR, dirs_exist_ok=True)
 
@@ -93,9 +96,16 @@ def save_file(str_list: List[str], path: str):
 
 
 def change_json_slash():
+    print("changing json slashes..")
     json_lines = read_file(INDEX_JSON_PATH)
+
+    # json_lines = open(full_read_path, "r").readlines()
     for i in range (len(json_lines)):
         curr_line = json_lines[i]
         json_lines[i] = curr_line.replace("\\\\", "/")
 
-        print("D")
+    save_file(json_lines, INDEX_JSON_PATH)
+    print("D")
+
+if __name__ == '__main__':
+    change_json_slash()

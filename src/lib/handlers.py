@@ -1,7 +1,7 @@
 from lib.helpers import *
 
 
-def handle_rewrite(match: re.Match, line: str, folder_dict: Dict, mode: str):
+def handle_rewrite(match: re.Match, line: str, folder_dict: Dict, mode: str) -> str:
     """
     Rewrite a line according to various modes
     :param line: one line in file
@@ -14,7 +14,7 @@ def handle_rewrite(match: re.Match, line: str, folder_dict: Dict, mode: str):
 
     # TODO: pretty print; point to default img if not found
     relative_dir = folder_dict[full_name] if full_name in folder_dict.keys() else ""
-    print(full_name, "  ->  ", relative_dir)
+    # print(full_name, "  ->  ", relative_dir)
 
     if mode == "embed":
         if not file_extension:

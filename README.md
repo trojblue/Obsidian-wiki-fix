@@ -8,11 +8,11 @@ Decently documented so it's easier to modify by your needs.
 
 ## Usage
 
-**The script is intended for "shortest possible" (`[[something]]`)style of wiki-link in obsidian settings.**
+The script is intended for **"shortest possible"** (`[[something]]`)style of wiki-link in obsidian settings.
 
 Because of how hugo works, duplicated / unwanted files in `content` will cause double-indexing problems on the website. 
 
-therefore, **EVERYTHING IN OUTPUT_DIR WILL BE DELETED, THEN OVERWRITTEN BY THE NEW FILES** when the program operates.
+therefore, **EVERYTHING in `OUTPUT_DIR` will be deleted and overwritten** when the program operates to avoid such issues.
 
 **USE AT YOUR OWN RISK!**
 
