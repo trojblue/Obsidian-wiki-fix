@@ -4,8 +4,9 @@ from lib.helpers import *
 
 def parse_folder_to_dicts(dir_name: SOURCE_DIR) -> Tuple[dict, List]:
     """
-    :param dir_name: folder absolute dir
-    :return: 2 Dicts:  { file_name: linux path}, [os path for markdown files]
+    Args:
+        dir_name: folder absolute dir
+    Returns: 2 Dicts:  { file_name: linux path}, [os path for markdown files]
     """
     out_dict = {}
     md_list = []
@@ -17,10 +18,15 @@ def parse_folder_to_dicts(dir_name: SOURCE_DIR) -> Tuple[dict, List]:
 
     return out_dict, md_list
 
-
-def get_file_info(file, md_list, out_dict, path, root_path):
+def get_file_info(file:str, md_list:List, out_dict:Dict, path:str, root_path:str) -> None:
     """
-    update md_list and out_dict info of a single file
+    update md_list and out_dict with a single file's info
+    Args:
+        file:       '_index.md'
+        md_list:    ['', '', '' ]
+        out_dict:   { file_name: linux path}
+        path:       eg. 'D:\\quartz\\content-edit\\.obsidian'
+        root_path: 'D:\\quartz\\content-edit'
     """
 
     # '../working_lib/_index.md'
@@ -28,11 +34,12 @@ def get_file_info(file, md_list, out_dict, path, root_path):
     # `_index`    `.md`
     filename, file_extension = get_extension(file)
 
-    if (file_extension in CONVERT_EXTENSIONS):  # is markdown
+    if (file_extension in MARKDOWN_EXTENSIONS):  # is markdown
         if (filename) in out_dict:
             # file with same name exists
             print("ERROR: markdown file %s already exists" % file)
         else:
+            # read_YAML()
             relative_path = get_relative_path(full_path, root_path)
             out_dict[filename] = relative_path
             md_list.append(relative_path)

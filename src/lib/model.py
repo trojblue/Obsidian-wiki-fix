@@ -5,7 +5,7 @@ INDEX_JSON_PATH = "D:\quartz\\assets\indices\contentIndex.json"
 # SOURCE_DIR = "D:\CSC2\Obsidian-wiki-fix\\test_lib"
 # OUTPUT_DIR = "D:\CSC2\Obsidian-wiki-fix\\test_out"
 
-CONVERT_EXTENSIONS = [".md", ".markdown"]
+MARKDOWN_EXTENSIONS = [".md", ".markdown"]
 
 # https://help.obsidian.md/Advanced+topics/Accepted+file+formats
 # listing ALL of them because github recognizes upper/lowercase as different

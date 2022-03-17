@@ -76,5 +76,8 @@ def convert_lines(lines: List, folder_dict: Dict) -> Tuple[List, int]:
     return lines, found_count
 
 
+def read_YAML(file):
+    pass
+
 if __name__ == '__main__':
     print("===This is the controller, and you shouldn't really be running this!===")
